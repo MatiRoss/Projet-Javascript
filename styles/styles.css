@@ -25,6 +25,15 @@ h1 {
     color: white;
 }
 
+h2 {
+    text-align: center;
+    padding: 1.5rem 2.5rem;
+    background-image: linear-gradient(120deg, slategrey 0%, black 100%);
+    margin: 0 0 2rem 0;
+    font-size: 1.5rem;
+    color: white;
+}
+
 img {
     display: block;
     margin: 1rem auto;
