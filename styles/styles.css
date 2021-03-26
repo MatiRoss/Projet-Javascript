@@ -87,3 +87,10 @@ p {
 .card:nth-child(5n) h1 {
     background-image: linear-gradient(120deg, slategrey 0%, black 100%);
 }
+
+.fotorama {
+    display: flex;
+   justify-content: center;
+    width:100%;
+
+}

@@ -5,8 +5,9 @@ $(document).ready(function () {
     logo.src = 'images/logo.png'
     const container = document.createElement('div')
     container.setAttribute('class', 'container')
-
+    const h3 = document.getElementById('h3')
     app.appendChild(logo)
+    app.append(h3)
     app.appendChild(container)
 
     fetch('https://ghibliapi.herokuapp.com/films')
@@ -35,7 +36,6 @@ $(document).ready(function () {
             console.error("Erreur:", error)
         });
 });
-
 
 
   /*  $.ajax({

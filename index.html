@@ -5,21 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <title>Accueil</title>
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet"/>
     <link href="styles/styles.css" rel="stylesheet"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js" defer></script>
     <script src="scripts/script.js" defer></script>
 
 </head>
 <header>
-    <h1>Bienvenue chez Miyazaki</h1>
+    <div id ="logoheader">
+        <h1>Bienvenue chez Miyazaki</h1>
+    </div>
+
 </header>
 
 <body>
-<div id="carousel"></div>
-
-<div id="feed"></div>
+<div class="fotorama" data-transition="crossfade"  data-nav="thumbs">
+    <img src="images/image1.png">
+    <img src="images/image2.jpg">
+    <img src="images/image3.jpg">
+    <img src="images/image4.jpg">
+    <img src="images/image5.jpg">
+</div>
+<div id="feed">
+    <h3 id ="h3">Tous les films du Studio Ghibli</h3>
+</div>
 <footer>
     <h2>Ceci est un footer</h2>
 </footer>
