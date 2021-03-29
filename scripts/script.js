@@ -1,5 +1,12 @@
 $(document).ready(function () {
 
+    function displayMenu() {
+        document.getElementById('myDropdown').classList.toggle('show');
+    }
+
+    $('#menu').on("click", displayMenu)
+
+
     const app = document.getElementById('feed')
     const header1 = document.createElement('div')
     header1.setAttribute('class','header1')
@@ -37,9 +44,6 @@ $(document).ready(function () {
         .catch(error => {
             console.error("Erreur:", error)
         });
-
-
-
 
 
 });
