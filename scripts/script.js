@@ -1,14 +1,16 @@
 $(document).ready(function () {
 
     const app = document.getElementById('feed')
+    const header1 = document.createElement('div')
+    header1.setAttribute('class','header1')
     const logo = document.createElement('img')
     logo.src = 'images/logo.png'
     const container = document.createElement('div')
     container.setAttribute('class', 'container')
     const h3 = document.getElementById('h3')
-    app.appendChild(logo)
     app.append(h3)
     app.appendChild(container)
+    header1.appendChild(logo)
 
     fetch('https://ghibliapi.herokuapp.com/films')
         .then(response => {
@@ -35,6 +37,11 @@ $(document).ready(function () {
         .catch(error => {
             console.error("Erreur:", error)
         });
+
+
+
+
+
 });
 
 
