@@ -2,13 +2,13 @@ $(document).ready(function () {
 
     // Gestion du menu dropdown
     function displayMenu() {
-        document.getElementById('myDropdown').classList.toggle('show');
+        document.querySelector('#myDropdown').classList.toggle('show');
     }
 
     $('#menu').on("click", displayMenu)
 
 
-    const feed = document.getElementById('feed')
+    const feed = document.querySelector('#feed')
     const header1 = document.createElement('div')
     header1.setAttribute('class', 'header1')
     const logo = document.createElement('img')
@@ -17,6 +17,7 @@ $(document).ready(function () {
     container.setAttribute('class', 'container')
     feed.appendChild(container)
     header1.appendChild(logo)
+    const movielist = document.querySelector('#movielist')
 
 
     // Récupération des données de l'API et affichage du feed
@@ -29,10 +30,6 @@ $(document).ready(function () {
         })
         .then((data) => {
             data.forEach((movie) => {
-                const movielist = document.getElementById('movielist')
-                const list = document.createElement('option')
-                list.text = movie.title
-                movielist.appendChild(list)
 
                 const card = document.createElement('div')
                 card.setAttribute('id', 'card')
@@ -43,20 +40,18 @@ $(document).ready(function () {
                 p.textContent = `${movie.description}...`
 
                 function leaveComment() {
-                    const name = document.getElementById('form1')
-                    const com = document.getElementById('form2')
+                    const name = document.querySelector('#form1')
+                    const com = document.querySelector('#form2')
                     const nametext = document.createElement('p')
                     const comtext = document.createElement('p')
                     nametext.textContent = `Auteur : ${name.value}`
                     comtext.textContent = `Commentaires : ${com.value}`
-                    card['id'] = list.text
-                    console.log(card['id'])
-                    if (list.text === card['id']) {
+                    const film = movielist.options[movielist.selectedIndex].text
+                    if (movie.title === film) {
                         card.appendChild(comtext)
                         card.appendChild(nametext)
                     }
                 }
-      /*   document.querySelectorAll('#post')             Selecteur jQuery */
 
                 container.appendChild(card)
                 card.appendChild(h1)
@@ -73,19 +68,18 @@ $(document).ready(function () {
 
 
     // Fonction pour vider le feed
-    function clearFeed() {
-        let element = document.getElementById('feed')
-        element.remove();
-    }
+    /*  function clearFeed() {
+          let element = document.getElementById('feed')
+          element.remove();
+      }
 
-    $('#clear').on("click", clearFeed)
+      $('#clear').on("click", clearFeed)
 
 
-    /* $('#form1').on("submit", e => {
-            e.preventDefault();
-            displayFeed()
-        })
-        */
+       $('#form1').on("submit", e => {
+              e.preventDefault();
+              displayFeed()
+          })
+          */
 
 })
-

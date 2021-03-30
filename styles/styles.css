@@ -95,7 +95,7 @@ p {
 
 
 .dropbtn {
-    background-image: linear-gradient(120deg, slategrey 0%, black 100%);
+    background-image: linear-gradient(-120deg, slategrey 0%, black 100%);
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -139,17 +139,26 @@ p {
     margin-top: 1rem;
 }
 
-#general {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
 h3 {
-    font-size: 1.5rem;
+    font-size: 3rem;
+    text-align: center;
 }
 
 #com {
     text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#comments {
+    background-color: #ffffdc;
+    padding: 1rem;
+    max-width: 1000px;
+    margin: 2rem auto;
+    box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);
+    border-radius: 12px;
+
+
 }
