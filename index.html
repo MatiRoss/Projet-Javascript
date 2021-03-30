@@ -43,14 +43,19 @@
 <div id="general">
     <div>
         <h3 id="h3">Tous les films du Studio Ghibli</h3></div>
-    <div id="form">
-        <form class="form" method="POST" action="">
-            Titre : <input type="text" name="pseudo" id="pseudo"/>
-            <input type="submit" name="submit" value="Ajouter un film" id="envoi"/>
-            <input type="submit" name="submit" value="Vider le feed" id="clear"/>
-        </form>
-    </div>
+    <input type="button" name="clear" value="Vider le feed" id="clear"/>
 </div>
+
+<form id="com">
+    <select id="movielist">
+        <option value="" disabled selected> Choisissez le film à commenter</option>
+
+    </select>
+    <input type="text" placeholder="Votre pseudo" id="form1">
+    <input type="text" placeholder="Ecrivez votre commentaire" id="form2">
+    <button type="button" id="post">Poster votre commentaire</button>
+</form>
+
 <div id="feed">
 </div>
 <footer>
