@@ -159,6 +159,15 @@ h3 {
     margin: 2rem auto;
     box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);
     border-radius: 12px;
+}
 
+#galleryRow {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
 
+#display {
+    display: flex;
+    justify-content: center;
 }
