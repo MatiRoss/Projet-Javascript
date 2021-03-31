@@ -42,8 +42,20 @@ $(document).ready(function () {
             addImages()
         })
 
-    addImages()
+        addImages()
 
+
+        function addImageUrl() {
+            const urlImage = document.querySelector('#url').value
+            gallery.unshift(urlImage)
+        }
+
+        $('#addPic').click(event => {
+            addImageUrl()
+            removeElementById('galleryRow')
+            removeElementById('galleryColumn')
+            addImages()
+        })
 
         /*
             function displayRow() {

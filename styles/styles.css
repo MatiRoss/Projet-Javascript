@@ -167,7 +167,23 @@ h3 {
     flex-direction: row;
 }
 
+#galleryRow img {
+    width: 30%;
+
+}
+
+#galleryColumn img {
+    width: 60%;
+
+}
+
 #display {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#addUrl {
     display: flex;
     justify-content: center;
 }
