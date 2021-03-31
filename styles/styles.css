@@ -169,11 +169,12 @@ h3 {
 
 #galleryRow img {
     width: 30%;
-
+    height: auto;
 }
 
 #galleryColumn img {
     width: 60%;
+    height: auto;
 
 }
 
@@ -186,4 +187,10 @@ h3 {
 #addUrl {
     display: flex;
     justify-content: center;
+    padding: 1%;
+
+}
+
+#addPic {
+
 }

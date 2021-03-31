@@ -45,13 +45,24 @@ $(document).ready(function () {
         addImages()
 
 
-        function addImageUrl() {
+        function addImage() {
             const urlImage = document.querySelector('#url').value
             gallery.unshift(urlImage)
         }
 
         $('#addPic').click(event => {
-            addImageUrl()
+            addImage()
+            removeElementById('galleryRow')
+            removeElementById('galleryColumn')
+            addImages()
+        })
+
+        function removeImage() {
+            gallery.shift()
+        }
+
+        $('#removePic').click(event => {
+            removeImage()
             removeElementById('galleryRow')
             removeElementById('galleryColumn')
             addImages()

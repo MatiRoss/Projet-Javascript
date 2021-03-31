@@ -13,7 +13,6 @@ $(document).ready(function () {
     header1.appendChild(logo)
 
 
-
     // Récupération des données de l'API et affichage du feed
     fetch('https://ghibliapi.herokuapp.com/films')
         .then(response => {
@@ -45,6 +44,7 @@ $(document).ready(function () {
                         card.appendChild(comtext)
                         card.appendChild(nametext)
                     }
+
                 }
 
                 container.appendChild(card)
@@ -52,6 +52,7 @@ $(document).ready(function () {
                 card.appendChild(p)
 
                 $('#post').on("click", leaveComment)
+
             })
 
                 .catch(error => {
@@ -59,6 +60,7 @@ $(document).ready(function () {
                 })
 
         })
+
 
 
     // Fonction pour vider le feed
