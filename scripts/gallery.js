@@ -58,7 +58,10 @@ $(document).ready(function () {
         })
 
         function removeImage() {
-            gallery.shift()
+            const url = document.querySelector('#url').value
+            if (url === gallery[0]) {
+                gallery.shift()
+            }
         }
 
         $('#removePic').click(event => {

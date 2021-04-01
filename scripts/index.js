@@ -41,8 +41,22 @@ $(document).ready(function () {
                     comtext.textContent = `Commentaires : ${com.value}`
                     const film = movielist.options[movielist.selectedIndex].text
                     if (movie.title === film) {
+                        let buttonRemove = document.createElement('button')
+                        buttonRemove.setAttribute('type', 'button')
+                        buttonRemove.textContent = 'Effacer le commentaire'
+
                         card.appendChild(comtext)
                         card.appendChild(nametext)
+                        card.appendChild(buttonRemove)
+
+                        buttonRemove.addEventListener('click', function (evt) {
+
+                            card.removeChild(comtext)
+                            card.removeChild(nametext)
+                            card.removeChild(buttonRemove)
+
+                        })
+
                     }
 
                 }
@@ -60,7 +74,6 @@ $(document).ready(function () {
                 })
 
         })
-
 
 
     // Fonction pour vider le feed
