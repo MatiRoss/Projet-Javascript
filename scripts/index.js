@@ -7,11 +7,40 @@ $(document).ready(function () {
     const logo = document.createElement('img')
     logo.src = 'images/logo.png'
     const container = document.createElement('div')
-    container.setAttribute('class', 'container')
+    container.setAttribute('id', 'container')
     const movielist = document.querySelector('#movielist')
     feed.appendChild(container)
     header1.appendChild(logo)
 
+    function leaveComment() {
+        const name = document.querySelector('#form1')
+        const com = document.querySelector('#form2')
+        const nametext = document.createElement('p')
+        const comtext = document.createElement('p')
+
+        nametext.textContent = `Auteur : ${name.value}`
+        comtext.textContent = `Commentaires : ${com.value}`
+        const film = movielist.value
+        let card = document.getElementById(film)
+
+        let buttonRemove = document.createElement('button')
+        buttonRemove.setAttribute('type', 'button')
+        buttonRemove.textContent = 'Effacer le commentaire'
+
+        card.appendChild(comtext)
+        card.appendChild(nametext)
+        card.appendChild(buttonRemove)
+
+        buttonRemove.addEventListener('click', function (evt) {
+
+            card.removeChild(comtext)
+            card.removeChild(nametext)
+            card.removeChild(buttonRemove)
+
+        })
+    }
+
+    $('#post').on("click", leaveComment)
 
     // Récupération des données de l'API et affichage du feed
     fetch('https://ghibliapi.herokuapp.com/films')
@@ -25,56 +54,28 @@ $(document).ready(function () {
             data.forEach((movie) => {
 
                 const card = document.createElement('div')
-                card.setAttribute('id', 'card')
+                card.setAttribute('id', movie.id)
+                card.setAttribute('class', 'card')
+                let option = document.createElement('option')
+                option.setAttribute('value', movie.id)
+                option.innerHTML = movie.title
                 const h1 = document.createElement('h1')
                 h1.textContent = movie.title
                 const p = document.createElement('p')
                 movie.description = movie.description.substring(0, 300)
                 p.textContent = `${movie.description}...`
 
-                function leaveComment() {
-                    const name = document.querySelector('#form1')
-                    const com = document.querySelector('#form2')
-                    const nametext = document.createElement('p')
-                    const comtext = document.createElement('p')
-                    nametext.textContent = `Auteur : ${name.value}`
-                    comtext.textContent = `Commentaires : ${com.value}`
-                    const film = movielist.options[movielist.selectedIndex].text
-                    if (movie.title === film) {
-                        let buttonRemove = document.createElement('button')
-                        buttonRemove.setAttribute('type', 'button')
-                        buttonRemove.textContent = 'Effacer le commentaire'
-
-                        card.appendChild(comtext)
-                        card.appendChild(nametext)
-                        card.appendChild(buttonRemove)
-
-                        buttonRemove.addEventListener('click', function (evt) {
-
-                            card.removeChild(comtext)
-                            card.removeChild(nametext)
-                            card.removeChild(buttonRemove)
-
-                        })
-
-                    }
-
-                }
-
                 container.appendChild(card)
+                movielist.appendChild(option)
                 card.appendChild(h1)
                 card.appendChild(p)
 
-                $('#post').on("click", leaveComment)
-
             })
 
-                .catch(error => {
-                    console.error("Erreur:", error)
-                })
-
         })
-
+        .catch(error => {
+            console.error("Erreur:", error)
+        })
 
     // Fonction pour vider le feed
     /*  function clearFeed() {
