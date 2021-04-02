@@ -25,6 +25,7 @@ $(document).ready(function () {
 
         let buttonRemove = document.createElement('button')
         buttonRemove.setAttribute('type', 'button')
+        buttonRemove.setAttribute('class', 'removeBtn')
         buttonRemove.textContent = 'Effacer le commentaire'
 
         card.appendChild(comtext)

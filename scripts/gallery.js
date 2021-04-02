@@ -71,31 +71,6 @@ $(document).ready(function () {
             addImages()
         })
 
-        /*
-            function displayRow() {
-                const containerRow = document.querySelector('#galleryRow')
-                gallery.forEach((e, index) => {
-                    let image = document.createElement('img')
-                    image.setAttribute("src", e)
-                    containerRow.appendChild(image)
-                })
-
-            }
-
-            $('#row').on("click", displayRow)
-
-            function displayColumn() {
-                const containerColumn = document.querySelector('#galleryColumn')
-                gallery.forEach((e, index) => {
-                    let image = document.createElement('img')
-                    image.setAttribute("src", e)
-                    containerColumn.appendChild(image)
-                })
-            }
-
-            $('#column').on("click", displayColumn)
-
-        */
 
     }
 )

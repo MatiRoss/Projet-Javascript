@@ -237,3 +237,31 @@ h3 {
    width: auto;
     height: 13rem
 }
+
+.removeBtn {
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    margin-left: 9rem
+}
+
+#displayGame {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: auto;
+    padding: 1rem;
+}
+
+#displayGame img{
+
+    width: 60%;
+    height: 60%;
+    padding: 1rem;
+    background-color: black;
+}
+
+.hidden {
+
+}

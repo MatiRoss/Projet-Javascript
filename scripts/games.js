@@ -107,4 +107,54 @@ $(document).ready(function () {
 
     })
 
+    let divTitle = document.querySelector('#titleMemory')
+    let title = document.createElement('h3')
+    let option = document.createElement('option')
+    let difficulty = document.querySelector('#menuMemory')
+    let divGame = document.querySelector('#displayGame')
+
+
+    fetch('https://api.mocki.io/v1/f0b3f83b')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("La requête n'a pas aboutie")
+            }
+            return response.json()
+        })
+        .then((data) => {
+
+            title.textContent = data.title
+            divTitle.appendChild(title)
+            option.innerHTML = data.niveau
+            difficulty.appendChild(option)
+
+
+            data.images.forEach((link) => {
+                    let array = [0, 1, 2, 3, 4]
+                    let result = array[Math.floor(Math.random() * array.length)]
+                    link = data.images[result]
+                    let divPic = document.createElement('div')
+                    let divImage = document.createElement('div')
+                    let image = document.createElement('img')
+                    image.setAttribute('class', 'hidden')
+                    let picture = document.createElement('img')
+                    picture.setAttribute('class', 'hidden')
+
+                    divGame.appendChild(divPic)
+                    divGame.appendChild(divImage)
+                    picture.setAttribute("src", link)
+                    image.setAttribute("src", link)
+                    divImage.appendChild(image)
+                    divPic.appendChild(picture)
+
+                }
+            )
+
+
+        })
+        .catch(error => {
+            console.error("Erreur:", error)
+        })
+
+
 })
